@@ -17,5 +17,11 @@ public class TwoSum {
         solution = Solution.twoSum(nums, target);
         System.out.println("\nArray: [3, 2, 4]; Target: 6");
         Solution.print(solution);
+
+        nums = new int[]{3, 3};
+//        target = 6;
+        solution = Solution.twoSum(nums, target);
+        System.out.println("\nArray: [3, 3]; Target: 6");
+        Solution.print(solution);
     }
 }

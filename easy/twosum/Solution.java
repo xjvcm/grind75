@@ -45,7 +45,7 @@ public class Solution {
         System.out.println("]");
     }
     public static int[] twoSum(int[] nums, int target) {
-        SimpleHashTable<Integer, Integer> numMap = new SimpleHashTable<>(nums.length);
+        IntHashMap<Integer, Integer> numMap = new IntHashMap<>(nums.length);
         int n = nums.length;
 
         for (int i = 0; i < n; i++) {
@@ -53,7 +53,7 @@ public class Solution {
             if (numMap.containsKey(complement)) {
                 return new int[]{numMap.get(complement), i};
             }
-            numMap.put(nums[i], i);
+            numMap.chainedHashInsert(nums[i], i);
         }
 
         return new int[]{}; // No solution found

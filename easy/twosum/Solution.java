@@ -13,49 +13,34 @@
  */
 package easy.twosum;
 
+import java.util.Map;
+import java.util.HashMap;
+
 public class Solution {
-//    public static int[] twoSum(int[] nums, int target) {
-//        int[] array = new int[2];
-//        for (int i = 0; i < array.length; i++) {
-//            array[i] = Integer.MAX_VALUE;
-//        }
-//
-//        for (int i = 0; i < nums.length; i++) {
-//            for (int j = 1; j < nums.length; j++) {
-//                if (i != j) {
-//                    if (nums[i] + nums[j] == target) {
-//                        array[0] = i;
-//                        array[1] = j;
-//                    }
-//                }
-//            }
-//        }
-//        return array;
-//    }
-//
-    public static void print(int[] solution) {
-        System.out.print("[");
-        for (int i = 0; i < solution.length; i++) {
-            if (i == 1) {
-                System.out.print(solution[i]);
-            } else {
-                System.out.print(solution[i] + ", ");
-            }
-        }
-        System.out.println("]");
+  public static void print(int[] solution) {
+    System.out.print("[");
+    for (int i = 0; i < solution.length; i++) {
+      if (i == 1) {
+        System.out.print(solution[i]);
+      } else {
+        System.out.print(solution[i] + ", ");
+      }
     }
-    public static int[] twoSum(int[] nums, int target) {
-        IntHashMap<Integer, Integer> numMap = new IntHashMap<>(nums.length);
-        int n = nums.length;
+    System.out.println("]");
+  }
 
-        for (int i = 0; i < n; i++) {
-            int complement = target - nums[i];
-            if (numMap.containsKey(complement)) {
-                return new int[]{numMap.get(complement), i};
-            }
-            numMap.chainedHashInsert(nums[i], i);
-        }
+  public static int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> numMap = new HashMap<>(nums.length);
+    int n = nums.length;
 
-        return new int[]{}; // No solution found
+    for (int i = 0; i < n; i++) {
+      int complement = target - nums[i];
+      if (numMap.containsKey(complement)) {
+        return new int[] {numMap.get(complement), i};
+      }
+      numMap.put(nums[i], i);
     }
+
+    return new int[] {}; // No solution found
+  }
 }

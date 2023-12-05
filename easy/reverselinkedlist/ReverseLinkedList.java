@@ -9,8 +9,8 @@ public class ReverseLinkedList {
     case01.next.next.next = new ListNode(4);
     case01.next.next.next.next = new ListNode(5);
 
-//    ListNode reverseCase01 = Solution.reverseListIteratively(case01);
-    ListNode reverseCase01 = Solution.reverseListRecursively(case01);
+    ListNode reverseCase01 = Solution.reverseListIteratively(case01);
+//    ListNode reverseCase01 = Solution.reverseListRecursively(case01);
 
     Solution.printList(reverseCase01);
 
@@ -29,6 +29,6 @@ public class ReverseLinkedList {
 //    ListNode reverseCase03 = Solution.reverseListIteratively(case03);
     ListNode reverseCase03 = Solution.reverseListRecursively(case03);
 
-    Solution.printList(case03);
+    Solution.printList(reverseCase03);
   }
 }
